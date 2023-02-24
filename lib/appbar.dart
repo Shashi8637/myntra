@@ -14,20 +14,34 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return ColorfulSafeArea(
       child: Scaffold(
-        drawer: Drawer(),
+        drawer: Drawer(
+          backgroundColor: Colors.black,
+          elevation: 0,
+        ),
         appBar: AppBar(
-          title: Text("Myntra"),
+          backgroundColor: Colors.white24,
+          title: Text("Myntra",
+          style: TextStyle(
+            color: Colors.black
+          ),
+          ),
           actions: [
             IconButton(
-                icon: Icon(Icons.search),
+                icon: Icon(Icons.search,
+                  color: Colors.black,
+                ),
                 onPressed: (){},
             ),
             IconButton(
                 onPressed:(){},
-                icon:Icon(Icons.favorite),
+                icon:Icon(Icons.favorite,
+                  color: Colors.black,
+                ),
             ), IconButton(
                 onPressed:(){},
-                icon:Icon(Icons.shopping_bag),
+                icon:Icon(Icons.shopping_bag,
+                  color: Colors.black,
+                ),
             ),
           ],
         ),
@@ -99,45 +113,82 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-            //SizedBox(height: 10,),
+            SizedBox(height: 10,),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
                   child: Container(
-                    child: Ink.image(image: AssetImage("image/foot.jpg",),
+                    child: Ink.image(image: AssetImage("image/shoes.jpg",),
                       height: 250,
                       width: 300,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Container(
+
+                      child: Column(
+                        children: [
+
+                          Center(
+                            child: Row(
+
+                                children: [
+                                  Container(
+                                    margin: EdgeInsets.symmetric(vertical: 60, horizontal: 55),
+                                    height: 20,
+                                    width: 90,
+                                    color: Colors.white,
+                                    child: Center(
+                                      child: Text("DRESSBERRY",
+                                       style: TextStyle(
+                                        color: Colors.blue
+                                  ),
+                              ),
+                                    ),
+                            ),
+
+                                  Container(
+                                    margin: EdgeInsets.symmetric( vertical: 30),
                               height: 20,
-                              width: 90,
+                              width: 108,
                               color: Colors.white,
-                              child: Text("DRESSBERRY",
-                               style: TextStyle(
-                                color: Colors.blue
+                                    child: Center(
+                                      child: Text("SUMMER SHOES",
+                                       style: TextStyle(
+                                        color: Colors.blue,
+
+                                  ),
+                              ),
+                                    ),
                             ),
-                        ),
-                      ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Container(
-                        height: 20,
-                        width: 35,
-                        color: Colors.white,
-                              child: Text("MEN",
-                               style: TextStyle(
-                                color: Colors.blue
-                            ),
-                        ),
-                      ),
-                          ],
+                                ],
                     ),
+                          ),
+                          Expanded(
+                            child: Column(
+
+                              children: [
+                                Expanded(
+                                  child: Text("Chic Footwear ",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 30,
+                                      color: Colors.teal
+                                    ),
+                                  ),
+                                ),
+                                Expanded(child: Text("Min. 40% Off",
+                                  style: TextStyle(
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.teal,
+                                  ),
+                                )),
+                              ],
+                            ),
+                          ),
+
+                        ],
+                      ),
+
                     ),
                   ),
                 ),
@@ -159,26 +210,59 @@ class _HomeState extends State<Home> {
               child: Container(
                 height: 500,
                 width: 350,
-                child: Column(
-                  children: [
-                    Image(image: AssetImage("image/watch.jpg",),),
-                    Container(
-                      color: Colors.red,
-                      height: 50,
-                      width: 80,
-                      child: ButtonBar(
-                        alignment: MainAxisAlignment.spaceEvenly,
+                color: Colors.white24,
+                child: InkWell(
+                  child: Ink.image(image: AssetImage("image/watch.jpg",),
+                    child: Container(
+                      margin: EdgeInsets.symmetric(vertical: 115,horizontal: 100),
 
-                        children: [
-                          Text("DANIEL KLEIN"),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Container(
 
-                        ],
-                      ),
+                              color: Colors.red,
+                              child: Text("DANIEL KLEIN",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  color: Colors.white
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Expanded(
+                              child: Text("40-70% Off",
+                                style: TextStyle(
+
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Text("Shop Now",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 15,
+                                  color: Colors.white,
+
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                     ),
-                  ],
+                  ),
+
+
                 ),
               ),
             ),
+
           ],
         ),
 
